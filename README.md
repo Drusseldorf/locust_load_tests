@@ -1,5 +1,3 @@
-markdown
-Копировать код
 # LOCUST LOAD TESTS
 
 ## Установка
