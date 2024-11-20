@@ -16,7 +16,6 @@ class MakeOrder:
     def payout(self, http_client: HttpUser) -> Response:
 
         payload = get_payload_for.payout()
-
         response = http_client.client.post(
             url=self.PAYOUT_ENDPOINT, headers=self.HEADERS, json=payload
         )

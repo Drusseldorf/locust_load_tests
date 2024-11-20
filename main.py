@@ -5,9 +5,9 @@ from locust import HttpUser, task
 import gevent
 
 
-class ToSuccessViaSmsReader(HttpUser):
+class LoadTests(HttpUser):
 
-    @task
+    # @task
     def success_via_sms(self):
         payin_response = make_order.payin(http_client=self)
 
@@ -22,3 +22,7 @@ class ToSuccessViaSmsReader(HttpUser):
             card=get_status_response.json()["card"]["number"],
             amount=get_status_response.json()["to_be_paid"],
         )
+
+    @task
+    def spam_payout(self):
+        make_order.payout(http_client=self)

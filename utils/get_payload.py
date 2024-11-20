@@ -35,8 +35,8 @@ class GetPayloadFor:
             "fail_url": "https://google.com/fail_url",
             "success_url": "https://google.com?success",
             "callback_url": "https://google.com",
-            "currency": settings.payin.currency,
-            "direct_method": settings.payin.direct_method,
+            "currency": settings.payout.currency,
+            "direct_method": settings.payout.direct_method,
             "bank_name": settings.payout.bank_name,
             "customer_requisite": settings.payout.customer_requisite,
         }
