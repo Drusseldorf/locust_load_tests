@@ -1,3 +1,5 @@
+from typing import List
+from pydantic import Field
 from pydantic_settings import BaseSettings, SettingsConfigDict
 from pathlib import Path
 
@@ -17,7 +19,7 @@ class PayInH(BaseSettings):
 class PayOut(BaseSettings):
     currency: str
     direct_method: str
-    bank_name: str
+    bank_name: List[str] = Field(default_factory=list)
     customer_requisite: str
 
 

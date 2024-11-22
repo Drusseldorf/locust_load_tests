@@ -26,6 +26,7 @@ class GetPayloadFor:
 
     def payout(self) -> dict:
         random_amount_3000_10000 = self._random_amount_3000_10000()
+        bank = random.choice(settings.payout.bank_name)
 
         unsigned_payload = {
             "company_id": settings.company.id,
@@ -37,7 +38,7 @@ class GetPayloadFor:
             "callback_url": "https://google.com",
             "currency": settings.payout.currency,
             "direct_method": settings.payout.direct_method,
-            "bank_name": settings.payout.bank_name,
+            "bank_name": bank,
             "customer_requisite": settings.payout.customer_requisite,
         }
 
