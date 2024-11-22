@@ -18,7 +18,7 @@ class PayInH(BaseSettings):
 
 class PayOut(BaseSettings):
     currency: str
-    direct_method: str
+    direct_method: List[str] = Field(default_factory=list)
     bank_name: List[str] = Field(default_factory=list)
     customer_requisite: str
 
